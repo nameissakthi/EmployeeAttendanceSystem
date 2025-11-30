@@ -80,16 +80,27 @@ npm run dev
 
 
 ## Screenshots
-
-Add screenshots to the `frontend/public/screenshots/` folder and reference them here. Example markdown placeholders:
-
-
 ![Login screen](frontend/public/screenshots/login.png)
 
+<img width="1888" height="903" alt="Screenshot 2025-11-30 092835" src="https://github.com/user-attachments/assets/81e919ab-cd0f-4821-a8e2-24887a5cc30e" />
+
+<img width="1919" height="909" alt="Screenshot 2025-11-30 092751" src="https://github.com/user-attachments/assets/96bae669-26a9-4fee-8346-f7e39530fc11" />
+
 ![Employee dashboard](frontend/public/screenshots/dashboard.png)
+
+<img width="1542" height="849" alt="Screenshot 2025-11-30 083532" src="https://github.com/user-attachments/assets/6d39359a-2b4c-46c2-95ca-0ef3e005f250" />
+
+<img width="1891" height="895" alt="Screenshot 2025-11-30 092958" src="https://github.com/user-attachments/assets/ba3e2650-dfc5-4745-bac7-f86fe6e4f56a" />
+
 ![Manager report export](frontend/public/screenshots/manager-report.png)
 
-Replace these with actual images before submitting. If you prefer, include a `screenshots/` directory at repo root and update the paths accordingly.
+<img width="1914" height="904" alt="Screenshot 2025-11-30 093027" src="https://github.com/user-attachments/assets/6be1c9a2-d847-4c23-938e-d7c2095ad3e3" />
+
+<img width="1889" height="899" alt="Screenshot 2025-11-30 093041" src="https://github.com/user-attachments/assets/59b27ae2-bdd5-4878-b5ea-54a2397145a1" />
+
+<img width="1901" height="900" alt="Screenshot 2025-11-30 093057" src="https://github.com/user-attachments/assets/03d564ac-03b8-4f18-9cef-6986cd459595" />
+
+
 
 
 
