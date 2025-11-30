@@ -60,5 +60,12 @@ async function start() {
   }
 }
 
-start()
+// If this file is run directly (node src/index.js), start the server.
+// When used as a module (e.g. in serverless), the `app` is exported and
+// the server is not started automatically.
+if (require.main === module) {
+  start()
+}
+
+module.exports = { app, start }
 
