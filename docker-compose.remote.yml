@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "4000:4000"
+    env_file:
+      - ./backend/.env.example
+    environment:
+      # Ensure NODE_ENV is production unless overridden in the env file
+      NODE_ENV: production
+    command: npm start
+    restart: unless-stopped

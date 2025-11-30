@@ -10,7 +10,33 @@ const attendanceRoutes = require('./routes/attendance')
 const PORT = process.env.PORT || 4000
 
 const app = express()
-app.use(cors())
+// Configure CORS
+// Accept FRONTEND_URL as a comma-separated list of allowed origins (e.g. "https://app.vercel.app,https://staging.vercel.app")
+const FRONTEND_URL = process.env.FRONTEND_URL || ''
+const allowedOrigins = FRONTEND_URL.split(',').map(s => s.trim()).filter(Boolean)
+
+if (allowedOrigins.length === 0) {
+  // default to allow all origins (useful for local/dev)
+  app.use(cors())
+  console.log('CORS: allowing all origins (no FRONTEND_URL configured)')
+} else {
+  const corsOptions = {
+    origin: function (origin, callback) {
+      // allow requests with no origin (e.g., curl, server-to-server)
+      if (!origin) return callback(null, true)
+      if (allowedOrigins.indexOf(origin) !== -1) {
+        return callback(null, true)
+      } else {
+        return callback(new Error('CORS policy: Origin not allowed'))
+      }
+    },
+    // allow cookies/auth if FRONTEND_NEEDS_CREDENTIALS is set to 'true'
+    credentials: process.env.FRONTEND_NEEDS_CREDENTIALS === 'true'
+  }
+
+  app.use(cors(corsOptions))
+  console.log('CORS: allowed origins =', allowedOrigins)
+}
 app.use(bodyParser.json())
 
 app.use('/api/auth', authRoutes)
